@@ -1,1 +1,1 @@
-## @imgcook/cli-plugin-generate
+## @imgcook/plugin-generate
