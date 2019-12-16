@@ -1,3 +1,9 @@
+/**
+ * plugin-generate
+ *
+ * Authors: gindis
+ */
+
 const fse = require('fs-extra');
 const chalk = require('chalk');
 const ora = require('ora');
@@ -7,7 +13,7 @@ const generatePlugin = async option => {
   let { data, cmd, filePath } = option;
   const { value, app } = cmd;
   let result = {
-    errorList: [],
+    errorList: []
   };
   const panelDisplay = data.code.panelDisplay;
   const defaultFilePath = filePath;
