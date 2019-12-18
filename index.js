@@ -1,5 +1,5 @@
 /**
- * plugin-generate
+ * Plugin Name: plugin-generate
  *
  * Authors: gindis
  */
@@ -54,7 +54,7 @@ const generatePlugin = async option => {
         outputFilePath = `${filePath}/${item.filePath}${panelName}`;
       }
 
-      // 针对 package 依赖 merge 处理
+      // Depend on merge processing for package
       try {
         if (panelName === 'package.json') {
           const packagePath = `${filePath}/package.json`;
@@ -84,7 +84,7 @@ const generatePlugin = async option => {
   }
 
   if (app) {
-    // 检索mods目录更新索引
+    // Retrieve mods directory update index
     try {
       let modList = [];
       let string = '';
@@ -109,7 +109,6 @@ const generatePlugin = async option => {
       }, 0);
     } catch (error) {
       result.errorList.push(error);
-      // console.log(chalk.red(`update link file error: ${error}`));
     }
   }
   return result;
