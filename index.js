@@ -16,10 +16,9 @@ const generatePlugin = async option => {
     errorList: []
   };
 
-  // console.log(data);
-  const panelDisplay = data.code.panelDisplay;
+  const panelDisplay = data.code && data.code.panelDisplay || data.data.code.panelDisplay;
   const defaultFilePath = filePath;
-
+  
   try {
     if (app) {
       filePath = `${filePath}/src/mods/mod${value}`;
