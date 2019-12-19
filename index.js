@@ -15,7 +15,7 @@ const generatePlugin = async option => {
   let result = {
     errorList: []
   };
-
+  if (!data) return { message: '参数不对' };
   const panelDisplay = data.code && data.code.panelDisplay || data.data.code.panelDisplay;
   const defaultFilePath = filePath;
   
