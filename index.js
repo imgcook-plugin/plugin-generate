@@ -10,11 +10,13 @@ const ora = require('ora');
 const spinner = ora();
 
 const generatePlugin = async option => {
-  let { data, cmd, filePath } = option;
-  const { value, app } = cmd;
+  let { data, config, filePath } = option;
+  const { value, app } = config;
   let result = {
     errorList: []
   };
+
+  // console.log(data);
   const panelDisplay = data.code.panelDisplay;
   const defaultFilePath = filePath;
 
@@ -111,7 +113,7 @@ const generatePlugin = async option => {
       result.errorList.push(error);
     }
   }
-  return result;
+  return { data, filePath, config, result };
 };
 
 module.exports = (...args) => {
