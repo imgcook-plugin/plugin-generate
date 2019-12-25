@@ -11,15 +11,14 @@ const spinner = ora();
 
 const generatePlugin = async option => {
   let { data, config, filePath } = option;
-  const { value, app } = config;
   let result = {
     errorList: []
   };
   if (!data) return { message: '参数不对' };
   const panelDisplay = data.code && data.code.panelDisplay || data.data.code.panelDisplay;
 
-  if (!fs.existsSync(filePath)) {
-    fs.mkdirSync(filePath);
+  if (!fse.existsSync(filePath)) {
+    fse.mkdirSync(filePath);
   }
 
   try {
