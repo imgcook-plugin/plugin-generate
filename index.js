@@ -17,17 +17,9 @@ const generatePlugin = async option => {
   };
   if (!data) return { message: '参数不对' };
   const panelDisplay = data.code && data.code.panelDisplay || data.data.code.panelDisplay;
-  const defaultFilePath = filePath;
-  
-  try {
-    if (app) {
-      filePath = `${filePath}/src/mods/mod${value}`;
-      if (!fse.existsSync(`${filePath}`)) {
-        fse.mkdirSync(`${filePath}`);
-      }
-    }
-  } catch (error) {
-    result.errorList.push(error);
+
+  if (!fs.existsSync(filePath)) {
+    fs.mkdirSync(filePath);
   }
 
   try {
@@ -84,34 +76,6 @@ const generatePlugin = async option => {
     result.errorList.push(error);
   }
 
-  if (app) {
-    // Retrieve mods directory update index
-    try {
-      let modList = [];
-      let string = '';
-      modList = fse.readdirSync(`${defaultFilePath}/src/mods/`).filter(v => {
-        return v !== 'index.js';
-      });
-      modList.map(name => {
-        string += `import ${name} from './${name}'\n`;
-      });
-      string += 'export default {\n';
-      modList.map(name => {
-        string += `\t${name},\n`;
-      });
-      string += '}';
-      fse.writeFileSync(
-        `${defaultFilePath}/src/mods/index.js`,
-        string,
-        'utf-8'
-      );
-      setTimeout(() => {
-        spinner.succeed(` 索引文件 index.js 更新完成`);
-      }, 0);
-    } catch (error) {
-      result.errorList.push(error);
-    }
-  }
   return { data, filePath, config, result };
 };
 
