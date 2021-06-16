@@ -17,6 +17,14 @@
     "fs-extra": "^7.0.1",
     "ora": "^3.4.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:imgcook-plugin/plugin-generate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imgcook-plugin/plugin-generate/issues"
+  },
+  "homepage": "https://github.com/imgcook-plugin/plugin-generate#readme",
   "publishConfig": {
     "registry": "http://registry.npmjs.org/",
     "access": "public"
