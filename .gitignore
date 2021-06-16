@@ -5,3 +5,4 @@ example
 *.swp
 demo
 package-lock.json
+yarn.lock
