@@ -1,7 +1,7 @@
 {
   "name": "@imgcook/plugin-generate",
-  "version": "0.1.7",
-  "description": "imgcook plugin",
+  "version": "0.1.8",
+  "description": "imgcook plugin generate",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/__test__.js"
