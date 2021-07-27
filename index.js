@@ -57,7 +57,7 @@ const generatePlugin = async option => {
               packageJson.dependencies = {};
             }
             const newDependencies = Object.assign(
-              newPackage,
+              newPackage.dependencies,
               packageJson.dependencies
             );
             packageJson.dependencies = newDependencies;
