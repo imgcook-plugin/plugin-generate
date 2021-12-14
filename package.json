@@ -25,10 +25,6 @@
     "url": "https://github.com/imgcook-plugin/plugin-generate/issues"
   },
   "homepage": "https://github.com/imgcook-plugin/plugin-generate#readme",
-  "publishConfig": {
-    "registry": "http://registry.npmjs.org/",
-    "access": "public"
-  },
   "gitHead": "27bbc51c6df7d11fa6588e33c839dd29f50b7763",
   "devDependencies": {
     "chai": "^4.3.0",
