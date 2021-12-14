@@ -27,8 +27,10 @@ const generatePlugin = async option => {
       let value = item.panelValue;
       const { panelName } = item;
       let outputFilePath = `${filePath}/${panelName}`;
-      if (item && item.filePath) {
-        let str = item.filePath;
+      let itemFilePath = item.filePath || item.folder || '';
+      if (item && itemFilePath) {
+        itemFilePath = itemFilePath.endsWith('/') ? itemFilePath : `${itemFilePath}/`;
+        let str = itemFilePath;
         if (typeof str === 'string') {
           str =
             str.substring(str.length - 1) == '/'
@@ -43,7 +45,7 @@ const generatePlugin = async option => {
             fse.mkdirSync(folder);
           }
         }
-        outputFilePath = `${filePath}/${item.filePath}${panelName}`;
+        outputFilePath = `${filePath}/${itemFilePath}${panelName}`;
       }
 
       // Depend on merge processing for package

@@ -1,6 +1,6 @@
 {
   "name": "@imgcook/plugin-generate",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "imgcook plugin generate",
   "main": "index.js",
   "scripts": {
